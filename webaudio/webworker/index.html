@@ -1,0 +1,42 @@
+
+<html>
+<head>
+<script type="text/javascript" src="audio.js"></script>
+<script type="text/javascript" src="buffer-loader.js"></script>
+<script type="text/javascript">
+    window.onload = init;
+
+    var audio;
+
+    function init() {
+     //   audio = new Worker('audio.js');
+     //   audio.postMessage();
+    }
+
+    function play() {
+        // audio.postMessage('play');
+        playSound();
+    }
+
+    function load() {
+        // audio.postMessage('load');
+        loadAssets('sound1.wav');
+        
+    }
+
+</script>
+
+</head>
+
+<body>
+    Click to load
+    <input type="button" onclick="load();" value="Load">
+    <p>
+    Click to play
+    <input type="button" onclick="play();" value="Play">
+
+</body>
+
+
+</html>
+
