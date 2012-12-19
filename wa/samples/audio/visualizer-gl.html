@@ -100,14 +100,17 @@ function loadAudioBuffer(url) {
 
     var request = new XMLHttpRequest();
     request.open("GET", url, true);
+    console.log(url);
     request.responseType = "arraybuffer";
 
     request.onload = function() { 
-        audioBuffer = context.createBuffer(request.response, false /*true*/);
+        console.log("onload");
+        audioBuffer = context.createBuffer(request.response, true);
         finishLoad();  // add in the slider, etc. now that we've loaded the audio
     }
 
     request.send();
+    console.log("request sned");
 }
 
 function initAudio() {
@@ -121,7 +124,8 @@ function initAudio() {
     source.connect(analyser);
     analyser.connect(context.destination);
 
-    loadAudioBuffer("sounds/hyper-reality/human-voice.mp4");
+    loadAudioBuffer("sounds/hyper-reality/human-voice.wav");
+    //loadAudioBuffer("sounds/hyper-reality/white-noise.wav");
 }
 
 if ( !window.requestAnimationFrame ) {
