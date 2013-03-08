@@ -581,7 +581,7 @@ function playNote(buffer, pan, x, y, z, sendGain, mainGain, playbackRate, noteTi
     var finalNode;
     if (pan) {
         var panner = context.createPanner();
-        panner.panningModel = webkitPannerNode.HRTF;
+        panner.panningModel = webkitAudioPannerNode.HRTF;
         panner.setPosition(x, y, z);
         voice.connect(panner);
         finalNode = panner;
